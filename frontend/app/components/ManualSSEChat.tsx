@@ -7,7 +7,7 @@ import { useStreamingChat } from "../hooks/useStreamingChat";
 export default function ManualSSEChat() {
   const [input, setInput] = useState("");
   const { messages, isStreaming, error, sendMessage, stop } =
-    useStreamingChat("http://localhost:8000/chat");
+    useStreamingChat(`${process.env.NEXT_PUBLIC_API_URL}/chat`);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
